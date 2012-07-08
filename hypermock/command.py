@@ -11,6 +11,8 @@ def main():
     
     # Set default config values
     app.config.setdefault('PROJECT_DIRECTORY', project_directory)
+    app.config.setdefault('WORKSPACE_SEND_FILE_OPTIONS', {})
+    app.config.setdefault('SUPPORTED_IMAGE_EXTENSIONS', [])
     
     # TODO: command-line processing
     
