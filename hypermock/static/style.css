@@ -73,3 +73,7 @@ h1 {
 .mockup {
     text-align: center;
 }
+
+.relationships h1 {
+    margin: 24px 12px 12px;
+}
