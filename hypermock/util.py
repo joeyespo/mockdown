@@ -1,6 +1,4 @@
 import os
-import posixpath
-from flask import url_for
 
 
 def list_files(directory, extensions):
@@ -12,25 +10,10 @@ def list_files(directory, extensions):
                 files.append(os.path.relpath(os.path.join(dirname, filename), directory))
     return files
 
-    
-def project_mockups(directory, extensions):
-    """Get the mockup objects, recursively, for the specified directory and list of extensions."""
-    return map(mockup, list_files(directory, extensions))
-
 
 def project_relationships(path):
     """Gets the relationships for the project, if it exists; otherwise, None."""
     return read_file(path)
-
-
-def mockup(path):
-    """Initializes a mockup object from the specified file path."""
-    unixpath = posixpath.normpath(path)
-    return {
-        'name': os.path.basename(os.path.splitext(path)[0]).title(),
-        'image': url_for('.images', filename=unixpath),
-        'url': url_for('.mockups', filename=unixpath),
-    }
 
 
 def read_file(path):
