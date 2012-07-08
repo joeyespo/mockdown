@@ -2,10 +2,14 @@
 
 {% block page %}
     
-    <div class="preview">
-        <h1>Hypermock</h1>
-        Sample text<br/>
-        Next line
-    </div>
+    <h1>Available Mockups</h1>
+    
+    <ul>
+        {% for mockup in mockups %}
+            <li>
+                <a href="{{ mockup.url }}"><img class="thumbnail" src="{{ mockup.image }}" alt="Mockup thumbnail" width="128" height="128" /></a>
+            </li>
+        {% endfor %}
+    </ul>
     
 {% endblock %}
