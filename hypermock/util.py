@@ -19,6 +19,7 @@ def project_mockups(directory, extensions):
 def mockup(path):
     unixpath = posixpath.normpath(path)
     return {
+        'name': os.path.basename(os.path.splitext(path)[0]).title(),
         'image': url_for('.images', filename=unixpath),
         'url': url_for('.mockups', filename=unixpath),
     }

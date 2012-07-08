@@ -4,12 +4,12 @@
     
     <div class="relationships">
         <h1>Available Mockups</h1>
-        
         <div class="mockup-list">
             <ul>
                 {% for mockup in mockups %}
                     <li>
                         <a href="{{ mockup.url }}"><img src="{{ mockup.image }}" alt="Mockup thumbnail" width="128" height="128" /></a>
+                        <a href="{{ mockup.url }}">{{ mockup.name }}</a>
                     </li>
                 {% endfor %}
             </ul>
