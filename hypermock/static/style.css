@@ -109,6 +109,7 @@ a:hover {
 
 .mockup-list a {
     display: block;
+    width: 130px;
 }
 
 .mockup-list a img {
