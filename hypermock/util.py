@@ -3,7 +3,7 @@ import posixpath
 from flask import url_for
 
 
-def project_files(directory, extensions):
+def list_files(directory, extensions):
     """Get a list of files, recursively, for the specified directory and list of extensions."""
     files = []
     for dirname, dirnames, filenames in os.walk(directory):
@@ -15,7 +15,7 @@ def project_files(directory, extensions):
     
 def project_mockups(directory, extensions):
     """Get the mockup objects, recursively, for the specified directory and list of extensions."""
-    return map(mockup, project_files(directory, extensions))
+    return map(mockup, list_files(directory, extensions))
 
 
 def project_relationships(path):
