@@ -26,3 +26,10 @@ def index():
 def mockup():
     # TODO: url_for
     return render_template('mockup.html')
+
+
+@app.route('/images/<path:filename>')
+def images(filename):
+    directory = app.config['PROJECT_DIRECTORY']
+    send_file_options = app.config.get('WORKSPACE_SEND_FILE_OPTIONS', {})
+    return send_from_directory(directory, filename, **send_file_options)
