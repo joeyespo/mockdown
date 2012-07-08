@@ -56,7 +56,7 @@ pre, code, kbd, samp, tt {
 body {
     margin: 0;
     padding: 0;
-    background: white;
+    background: #eee;
     font: 16px Arial, Georgia, serif;
 }
 
