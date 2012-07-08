@@ -28,8 +28,7 @@ def index():
 
 @app.route('/mockups/<path:filename>')
 def mockups(filename):
-    directory = app.config['PROJECT_DIRECTORY']
-    if not os.path.exists(safe_join(directory, filename)):
+    if not supported(filename) or not exists(filename):
         abort(404)
     
     image = url_for('.images', filename=filename)
@@ -38,6 +37,17 @@ def mockups(filename):
 
 @app.route('/images/<path:filename>')
 def images(filename):
+    if not supported(filename):
+        abort(404)
     directory = app.config['PROJECT_DIRECTORY']
     send_file_options = app.config['SEND_FILE_OPTIONS']
     return send_from_directory(directory, filename, **send_file_options)
+
+
+# Helpers
+def supported(filename):
+    return os.path.splitext(filename)[1] in app.config['SUPPORTED_EXTENSIONS']
+
+
+def exists(filename):
+    return os.path.exists(safe_join(app.config['PROJECT_DIRECTORY'], filename))
