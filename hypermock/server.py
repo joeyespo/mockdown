@@ -39,5 +39,5 @@ def mockups(filename):
 @app.route('/images/<path:filename>')
 def images(filename):
     directory = app.config['PROJECT_DIRECTORY']
-    send_file_options = app.config['WORKSPACE_SEND_FILE_OPTIONS']
+    send_file_options = app.config['SEND_FILE_OPTIONS']
     return send_from_directory(directory, filename, **send_file_options)

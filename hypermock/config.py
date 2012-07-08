@@ -10,7 +10,7 @@ HOST = 'localhost'
 PORT = 8080
 PROJECT_PATH = '.'
 
-WORKSPACE_SEND_FILE_OPTIONS = { 'cache_timeout': None, 'add_etags': False }
+SEND_FILE_OPTIONS = { 'cache_timeout': None, 'add_etags': False }
 
 SUPPORTED_IMAGE_EXTENSIONS = [
     '.jpg', '.jpeg', '.jpe', '.jif', '.jfif', '.jfi',       # JPEG
