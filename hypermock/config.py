@@ -23,7 +23,9 @@ SUPPORTED_IMAGE_EXTENSIONS = [
     '.mng',                             # Multiple-image Network Graphics
     '.tiff', '.tif',                    # Tagged Image File Format
     '.svg', '.svgz',                    # Scalable Vector Graphics
-    '.pdf',                             # Portable Document Format
     '.xbm',                             # X BitMap
     '.bmp', '.dib',                     # Bitmap
+    
+    # TODO: Server-side support?
+    #'.pdf',                            # Portable Document Format
 ]
