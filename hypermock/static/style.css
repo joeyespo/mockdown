@@ -112,18 +112,15 @@ a:hover {
 }
 
 .mockup-list a img {
-    margin-bottom: 8px;
+    display: block;
+    margin: 0 auto 8px;
+    border: 1px solid #333;
 }
 
 .mockup-list a:hover img {
     box-shadow: 0 0 6px 6px #88f;
     -moz-box-shadow: 0 0 6px 6px #88f;
     -webkit-box-shadow: 0 0 6px 6px #88f;
-}
-
-.mockup-list img {
-    display: block;
-    border: 1px solid #333;
 }
 
 .empty-mockup-list {
