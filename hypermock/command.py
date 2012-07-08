@@ -8,11 +8,15 @@ def main():
     
     # Get contextual information
     project_directory = os.path.abspath(os.path.normpath('.'))
+    relationships_filename = 'relationships.json'
+    relationships_path = os.path.join(project_directory, relationships_filename)
     
     # Set default config values
     app.config.setdefault('PROJECT_DIRECTORY', project_directory)
     app.config.setdefault('WORKSPACE_SEND_FILE_OPTIONS', {})
     app.config.setdefault('SUPPORTED_IMAGE_EXTENSIONS', [])
+    app.config.setdefault('RELATIONSHIPS_FILENAME', relationships_filename)
+    app.config.setdefault('RELATIONSHIPS_PATH', relationships_path)
     
     # TODO: command-line processing
     

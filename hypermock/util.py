@@ -16,6 +16,10 @@ def project_mockups(directory, extensions):
     return map(mockup, project_files(directory, extensions))
 
 
+def project_relationships(path):
+    return read_file(path)
+
+
 def mockup(path):
     unixpath = posixpath.normpath(path)
     return {
@@ -23,3 +27,10 @@ def mockup(path):
         'image': url_for('.images', filename=unixpath),
         'url': url_for('.mockups', filename=unixpath),
     }
+
+
+def read_file(path):
+    if not os.path.exists(path):
+        return None
+    with open(path) as f:
+        return f.read()

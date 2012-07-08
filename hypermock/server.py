@@ -6,7 +6,7 @@ Hypermock server to create mockup relationships and add comments.
 
 import os
 from flask import Flask, render_template, url_for, abort, safe_join, send_from_directory
-from .util import project_mockups
+from .util import project_mockups, project_relationships
 
 
 # Flask application
@@ -20,8 +20,10 @@ app.config.from_pyfile('local_config.py', silent=True)
 def index():
     directory = app.config['PROJECT_DIRECTORY']
     extensions = app.config['SUPPORTED_IMAGE_EXTENSIONS']
-    mockups = project_mockups(directory, extensions)
-    return render_template('index.html', mockups=mockups)
+    relationships_path = app.config['RELATIONSHIPS_PATH']
+    available = project_mockups(directory, extensions)
+    relationships = project_relationships(relationships_path)
+    return render_template('index.html', available=available, relationships=relationships)
 
 
 @app.route('/mockups/<path:filename>')
