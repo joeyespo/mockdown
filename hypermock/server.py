@@ -19,7 +19,8 @@ app.config.from_pyfile('local_config.py', silent=True)
 @app.route('/')
 def index():
     directory = app.config['PROJECT_DIRECTORY']
-    mockups = project_mockups(directory)
+    extensions = app.config['SUPPORTED_IMAGE_EXTENSIONS']
+    mockups = project_mockups(directory, extensions)
     return render_template('index.html', mockups=mockups)
 
 
