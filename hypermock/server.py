@@ -22,7 +22,7 @@ def index():
     return render_template('index.html', mockups=mockups)
 
 
-@app.route('/')
+@app.route('/mockup')
 def mockup():
     # TODO: url_for
     return render_template('mockup.html')
