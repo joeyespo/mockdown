@@ -12,7 +12,7 @@ PROJECT_PATH = '.'
 
 SEND_FILE_OPTIONS = { 'cache_timeout': None, 'add_etags': False }
 
-SUPPORTED_IMAGE_EXTENSIONS = [
+SUPPORTED_EXTENSIONS = [
     '.jpg', '.jpeg', '.jpe', '.jif', '.jfif', '.jfi',       # JPEG
     '.jp2', '.j2k', '.jpf', '.jpx', '.jpm', '.mj2',         # JPEG 2000
     '.hdp', '.jxr', '.wdp',                                 # JPEG XR

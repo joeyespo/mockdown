@@ -19,7 +19,7 @@ app.config.from_pyfile('local_config.py', silent=True)
 @app.route('/')
 def index():
     directory = app.config['PROJECT_DIRECTORY']
-    extensions = app.config['SUPPORTED_IMAGE_EXTENSIONS']
+    extensions = app.config['SUPPORTED_EXTENSIONS']
     relationships_path = app.config['RELATIONSHIPS_PATH']
     available = project_mockups(directory, extensions)
     relationships = project_relationships(relationships_path)
