@@ -101,6 +101,13 @@ h1 {
 .mockup-list a {
     float: left;
     margin: 12px;
+}
+
+.mockup-list a:hover {
+    box-shadow: 0 0 5px 5px #88f;
+    -moz-box-shadow: 0 0 5px 5px #88f;
+    -webkit-box-shadow: 0 0 5px 5px #88f;
+}
 
 .mockup-list img {
     display: block;
