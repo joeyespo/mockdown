@@ -64,6 +64,15 @@ h1 {
     font-size: 24px;
 }
 
+a {
+    color: #38f;
+    font-size: 14px;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
 .relationships {
     text-align: center;
 }
@@ -107,9 +116,9 @@ h1 {
 }
 
 .mockup-list a:hover img {
-    box-shadow: 0 0 5px 5px #88f;
-    -moz-box-shadow: 0 0 5px 5px #88f;
-    -webkit-box-shadow: 0 0 5px 5px #88f;
+    box-shadow: 0 0 6px 6px #88f;
+    -moz-box-shadow: 0 0 6px 6px #88f;
+    -webkit-box-shadow: 0 0 6px 6px #88f;
 }
 
 .mockup-list img {
