@@ -1,7 +1,7 @@
 import os
 import posixpath
 from flask import url_for
-from .util import list_files, read_file
+from .util import list_files
 
 try:
     import simplejson as json

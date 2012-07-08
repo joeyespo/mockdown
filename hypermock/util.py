@@ -11,11 +11,6 @@ def list_files(directory, extensions):
     return files
 
 
-def project_relationships(path):
-    """Gets the relationships for the project, if it exists; otherwise, None."""
-    return read_file(path)
-
-
 def read_file(path):
     """Returns the contents of the specified file, if it exists; otherwise, None."""
     if not os.path.exists(path):
