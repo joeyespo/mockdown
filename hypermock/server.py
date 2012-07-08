@@ -30,18 +30,14 @@ def index():
 def mockups(filename):
     if not supported(filename) or not exists(filename):
         abort(404)
-    
-    image = url_for('.images', filename=filename)
-    return render_template('mockups.html', image=image)
+    return render_template('mockups.html', image=url_for('.images', filename=filename))
 
 
 @app.route('/images/<path:filename>')
 def images(filename):
     if not supported(filename):
         abort(404)
-    directory = app.config['PROJECT_DIRECTORY']
-    send_file_options = app.config['SEND_FILE_OPTIONS']
-    return send_from_directory(directory, filename, **send_file_options)
+    return send_from_directory(app.config['PROJECT_DIRECTORY'], filename, **app.config['SEND_FILE_OPTIONS'])
 
 
 # Helpers
