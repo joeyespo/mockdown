@@ -92,15 +92,10 @@ h1 {
    display: block;
    float: left;
    list-style: none;
-   margin: 0;
+   margin: 12px;
    padding: 0;
    position: relative;
    right: 50%;
-}
-
-.mockup-list a {
-    float: left;
-    margin: 12px;
 }
 
 .mockup-list a:hover {
