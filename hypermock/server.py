@@ -22,10 +22,10 @@ def index():
     return render_template('index.html', mockups=mockups)
 
 
-@app.route('/mockup')
-def mockup():
-    # TODO: url_for
-    return render_template('mockup.html')
+@app.route('/mockup/<path:filename>')
+def mockup(filename):
+    image = url_for('.images', filename=filename)
+    return render_template('mockup.html', image=image)
 
 
 @app.route('/images/<path:filename>')
