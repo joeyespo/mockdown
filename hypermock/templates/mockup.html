@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
-{{ block scripts }}
+{% block scripts %}
     <script src="{{ url_for('.static', filename='hypermock.js') }}"></script>
-{{ endblock }}
+{% endblock %}
 
-{{ block page }}
+{% block page %}
     
     <div class="mockup">
         <div class="project">
@@ -18,4 +18,4 @@
         </div>
     </div>
     
-{{ endblock }}
+{% endblock %}
