@@ -19,5 +19,5 @@ def mockup(path):
     unixpath = posixpath.normpath(path)
     return {
         'image': url_for('.images', filename=unixpath),
-        'url': url_for('.mockup', filename=unixpath),
+        'url': url_for('.mockups', filename=unixpath),
     }
