@@ -1,0 +1,1 @@
+// hypermock.js

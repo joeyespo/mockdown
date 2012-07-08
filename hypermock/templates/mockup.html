@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{{ block scripts }}
+    <script src="{{ url_for('.static', filename='hypermock.js') }}"></script>
+{{ endblock }}
+
+{{ block page }}
+    
+    <div class="mockup">
+        <div class="project">
+        </div>
+        
+        <div class="preview">
+            <img src="{{ image }}"
+        </div>
+        
+        <div class="tools">
+        </div>
+    </div>
+    
+{{ endblock }}

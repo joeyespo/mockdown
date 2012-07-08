@@ -17,3 +17,9 @@ app.config.from_pyfile('local_config.py', silent=True)
 @app.route('/')
 def index():
     return render_template('index.html')
+
+
+@app.route('/')
+def mockup():
+    # TODO: url_for
+    return render_template('mockup.html')
