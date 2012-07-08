@@ -11,7 +11,7 @@
                     
                     {% for mockup in mockups.unlisted %}
                         <li>
-                            <a href="{{ mockup.url }}"><img src="{{ mockup.image }}" alt="Mockup thumbnail" width="128" height="128" /></a>
+                            <a href="{{ mockup.url }}"><img src="{{ mockup.image }}" {{ 'class="default-mockup"'|safe if mockup.is_default }} alt="Mockup thumbnail" width="128" height="128" /></a>
                             <a href="{{ mockup.url }}">{{ mockup.name }}</a>
                         </li>
                     {% endfor %}

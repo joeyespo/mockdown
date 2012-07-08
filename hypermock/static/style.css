@@ -112,16 +112,22 @@ a:hover {
     width: 130px;
 }
 
+.mockup-list a:hover img, .mockup-list a:hover img.default-mockup {
+    box-shadow: 0 0 6px 6px #88f;
+    -moz-box-shadow: 0 0 6px 6px #88f;
+    -webkit-box-shadow: 0 0 6px 6px #88f;
+}
+
 .mockup-list a img {
     display: block;
     margin: 0 auto 8px;
     border: 1px solid #333;
 }
 
-.mockup-list a:hover img {
-    box-shadow: 0 0 6px 6px #88f;
-    -moz-box-shadow: 0 0 6px 6px #88f;
-    -webkit-box-shadow: 0 0 6px 6px #88f;
+.mockup-list a img.default-mockup {
+    box-shadow: 0 0 8px 8px #ff6;
+    -moz-box-shadow: 0 0 8px 8px #ff6;
+    -webkit-box-shadow: 0 0 8px 8px #ff6;
 }
 
 .empty-mockup-list {
