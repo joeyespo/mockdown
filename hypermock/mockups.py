@@ -3,11 +3,6 @@ import posixpath
 from flask import url_for
 from .util import list_files
 
-try:
-    import simplejson as json
-except ImportError:
-    import json
-
 
 class MockupGraph(object):
     def __init__(self, project_directory, relationships_filename, supported_extensions, relationships, unlisted):
