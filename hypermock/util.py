@@ -1,6 +1,12 @@
 import os
 
 
+try:
+    import simplejson as json
+except ImportError:
+    import json
+
+
 def list_files(directory, extensions):
     """Get a list of files, recursively, for the specified directory and list of extensions."""
     files = []
@@ -11,9 +17,9 @@ def list_files(directory, extensions):
     return files
 
 
-def read_file(path):
+def read_json(path):
     """Returns the contents of the specified file, if it exists; otherwise, None."""
     if not os.path.exists(path):
         return None
     with open(path) as f:
-        return f.read()
+        return json.load(f)
