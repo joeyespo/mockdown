@@ -3,19 +3,34 @@
 {% block page %}
     
     <div class="relationships">
-        <h1>Available Mockups</h1>
-        
         {% if not graph.mockups %}
+            <h1>Available Mockups</h1>
             <div class="empty-list">
                 <span>No mockups found.</span>
             </div>
-        {% else %}
-            <div class="mockup-list">
+        {% endif %}
+        
+        {% if graph.relationships %}
+            <div class="mockup-list relationships">
+                <h1>Mockup Relationships</h1>
                 <ul>
-                    
-                    {% for mockup in graph.unlisted %}
+                    {% for mockup in graph.relationships %}
                         <li>
                             <a href="{{ mockup.url }}"><img src="{{ mockup.image }}" {{ 'class="default-mockup"'|safe if mockup.is_default }} alt="Mockup thumbnail" width="128" height="128" /></a>
+                            <a href="{{ mockup.url }}">{{ mockup.name }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        
+        {% if graph.unlisted %}
+            <div class="mockup-list unlisted">
+                <h1>{{ 'Unused' if graph.relationships else 'Available' }} Mockups</h1>
+                <ul>
+                    {% for mockup in graph.unlisted %}
+                        <li>
+                            <a href="{{ mockup.url }}"><img src="{{ mockup.image }}" alt="Mockup thumbnail" width="128" height="128" /></a>
                             <a href="{{ mockup.url }}">{{ mockup.name }}</a>
                         </li>
                     {% endfor %}
