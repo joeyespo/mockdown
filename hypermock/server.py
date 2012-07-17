@@ -37,13 +37,6 @@ def images(filename):
 
 
 # Helpers
-def project_mockups():
-    return graph_mockups(
-        app.config['PROJECT_DIRECTORY'],
-        app.config['RELATIONSHIPS_PATH'],
-        app.config['SUPPORTED_EXTENSIONS'])
-
-
 def supported(filename):
     return os.path.splitext(filename)[1] in app.config['SUPPORTED_EXTENSIONS']
 
