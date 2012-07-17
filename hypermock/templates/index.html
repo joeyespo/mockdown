@@ -5,7 +5,7 @@
     <div class="relationships">
         <h1>Available Mockups</h1>
         
-        {% if not mockups.relationships and not mockups.unlisted %}
+        {% if not graph.relationships and not graph.unlisted %}
             <div class="empty-list">
                 <span>No mockups found.</span>
             </div>
@@ -13,7 +13,7 @@
             <div class="mockup-list">
                 <ul>
                     
-                    {% for mockup in mockups.unlisted %}
+                    {% for mockup in graph.unlisted %}
                         <li>
                             <a href="{{ mockup.url }}"><img src="{{ mockup.image }}" {{ 'class="default-mockup"'|safe if mockup.is_default }} alt="Mockup thumbnail" width="128" height="128" /></a>
                             <a href="{{ mockup.url }}">{{ mockup.name }}</a>
