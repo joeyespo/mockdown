@@ -18,13 +18,12 @@ class MockupGraph(object):
 
 
 class Mockup(object):
-    def __init__(self, project_directory, path, is_listed=False, is_default=False):
+    def __init__(self, project_directory, path, is_default=False):
         relative_path = os.path.relpath(path, project_directory)
         urlpath = posixpath.normpath(relative_path)
         self.project_directory = project_directory
         self.path = path
         self.is_existing = os.path.exists(path)
-        self.is_listed = is_listed
         self.is_default = is_default
         self.name = os.path.basename(os.path.splitext(path)[0]).title()
         self.image = url_for('.images', filename=urlpath)
@@ -69,8 +68,7 @@ def load_relationship_mockups(filename, project_directory):
             print 'Warning: mockup item is not an object -- skipping'
             continue
         path = os.path.normpath(os.path.join(project_directory, filename))
-        is_default = default == path
-        mockups.append(Mockup(project_directory, path, True, is_default))
+        mockups.append(Mockup(project_directory, path, default == path))
     return mockups
 
 
