@@ -5,7 +5,11 @@
     <div class="relationships">
         <h1>Available Mockups</h1>
         
-        {% if mockups.relationships or mockups.unlisted %}
+        {% if not mockups.relationships and not mockups.unlisted %}
+            <div class="empty-mockup-list">
+                <span>No mockups found.</span>
+            </div>
+        {% else %}
             <div class="mockup-list">
                 <ul>
                     
@@ -16,10 +20,6 @@
                         </li>
                     {% endfor %}
                 </ul>
-            </div>
-        {% else %}
-            <div class="empty-mockup-list">
-                <span>No mockups found.</span>
             </div>
         {% endif %}
     </div>
