@@ -18,7 +18,8 @@ app.config.from_pyfile('local_config.py', silent=True)
 # Views
 @app.route('/')
 def index():
-    return render_template('index.html', mockups=project_mockups())
+    mockups = graph_mockups(app.config['PROJECT_DIRECTORY'], app.config['RELATIONSHIPS_PATH'], app.config['SUPPORTED_EXTENSIONS'])
+    return render_template('index.html', mockups=mockups)
 
 
 @app.route('/mockups/<path:filename>')
