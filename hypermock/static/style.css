@@ -73,14 +73,6 @@ a:hover {
     text-decoration: underline;
 }
 
-.relationships {
-    text-align: center;
-}
-
-.relationships h1 {
-    margin: 24px 12px 12px;
-}
-
 .empty-list {
     margin: 64px 0;
 }
@@ -140,6 +132,14 @@ a:hover {
     box-shadow: 0 0 8px 8px #ff6;
     -moz-box-shadow: 0 0 8px 8px #ff6;
     -webkit-box-shadow: 0 0 8px 8px #ff6;
+}
+
+.relationships {
+    text-align: center;
+}
+
+.relationships h1 {
+    margin: 24px 12px 12px;
 }
 
 .mockup-edit {
