@@ -81,11 +81,11 @@ a:hover {
     margin: 24px 12px 12px;
 }
 
-.empty-mockup-list {
+.empty-list {
     margin: 64px 0;
 }
 
-.empty-mockup-list span {
+.empty-list span {
     font-size: 12px;
     color: #333;
     border: 1px solid #888;
