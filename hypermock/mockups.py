@@ -12,6 +12,9 @@ class MockupGraph(object):
         self.relationships = relationships
         self.unlisted = unlisted
         self.mockups = relationships + unlisted
+    
+    def __repr__(self):
+        return '<MockupGraph: %s mockups at %s>' % (len(self.mockups), os.path.relpath(self.project_directory, '.'))
 
 
 class Mockup(object):
