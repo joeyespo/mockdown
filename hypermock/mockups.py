@@ -25,6 +25,9 @@ class Mockup(object):
         self.name = os.path.basename(os.path.splitext(path)[0]).title()
         self.image = url_for('.images', filename=urlpath)
         self.url = url_for('.mockups', filename=urlpath)
+    
+    def __repr__(self):
+        return '<Mockup: %s%s>' % (repr(self.path), ' (default)' if self.is_default else '')
 
 
 def graph_mockups(project_directory, relationships_filename, supported_extensions):
