@@ -11,6 +11,7 @@ class MockupGraph(object):
         self.supported_extensions = supported_extensions
         self.relationships = relationships
         self.unlisted = unlisted
+        self.mockups = relationships + unlisted
 
 
 class Mockup(object):
