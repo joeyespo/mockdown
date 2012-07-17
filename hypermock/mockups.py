@@ -70,7 +70,7 @@ def load_relationship_mockups(filename, project_directory):
             continue
         path = os.path.normpath(os.path.join(project_directory, filename))
         is_default = default == path
-        mockups.append(Mockup(project_directory, path, is_default))
+        mockups.append(Mockup(project_directory, path, True, is_default))
     return mockups
 
 
