@@ -142,6 +142,24 @@ a:hover {
     margin: 24px 12px 12px;
 }
 
-.mockup-edit {
+.preview-container {
+    float: left;
+    width: 100%;
+}
+
+.preview {
+    margin: 0 200px 0 230px; /* "0 <RightColumnWidth> 0 <LeftColumnWidth> */
     text-align: center;
+}
+
+.project {
+    float: left;
+    width: 230px; /* <LeftColumnWidth> */
+    margin-left: -100%;
+}
+
+.tools {
+    float: left;
+    width: 200px; /* <RightColumnWidth> */
+    margin-left: -200px; /*  -<RightColumnWidth> */
 }

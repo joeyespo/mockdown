@@ -7,12 +7,14 @@
 {% block page %}
     
     <div class="mockup-edit">
+        <div class="preview-container">
+            <div class="preview">
+                <img src="{{ mockup.image }}" alt="Mockup image" />
+            </div>
+        </div>
+            
         <div class="project">
             <a href="{{ url_for('.index') }}">Back</a>
-        </div>
-        
-        <div class="preview">
-            <img src="{{ mockup.image }}" alt="Mockup image" />
         </div>
         
         <div class="tools">
