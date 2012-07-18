@@ -40,6 +40,14 @@ def graph_mockups(project_directory, relationships_filename, supported_extension
     return MockupGraph(project_directory, relationships_filename, supported_extensions, relationships, unlisted)
 
 
+def get_mockup(project_directory, relationships_filename, mockup_filename):
+    """Loads a mockup from the specifide relative path."""
+    relationships = load_relationship_mockups(relationships_filename, project_directory)
+    path = os.path.join(project_directory, os.path.normpath(mockup_filename))
+    mockup = mockup_from_path(relationships, path)
+    return mockup if mockup else Mockup(project_directory, path)
+
+
 def load_relationship_mockups(filename, project_directory):
     """Returns a list of Mockups from the specified file."""
     try:
@@ -77,3 +85,11 @@ def load_unlisted_files(mockups, project_directory, supported_extensions):
     paths = list_files(project_directory, supported_extensions, project_directory)
     listed = [mockup.path for mockup in mockups]
     return [Mockup(project_directory, path) for path in paths if path not in listed]
+
+
+def mockup_from_path(relationships, path):
+    """Gets the associated Mockup with the specified normalized path from the relationships."""
+    for mockup in relationships:
+        if mockup.path == path:
+            return mockup
+    return None
