@@ -54,10 +54,15 @@ def get_mockup(project_directory, relationships_filename, mockup_filename):
 def load_relationship_mockups(filename, project_directory):
     """Returns a list of Mockups from the specified file."""
     try:
-        data = read_json(filename)
+        with open(filename) as f:
+            data = json.load(f)
+    except IOError, e:
+        # TODO: report error
+        print 'Error reading ' + os.path.basename(filename) + ':', e, '-- skipping'
+        return {}
     except ValueError, e:
         # TODO: report error
-        print 'Error reading ' + os.path.basename(filename) + ':', e
+        print 'Error reading ' + os.path.basename(filename) + ':', e, '-- skipping'
         return {}
     
     try:
@@ -106,12 +111,3 @@ def list_files(directory, extensions=None, base_path=None):
             if not extensions or os.path.splitext(filename)[1] in extensions:
                 files.append(os.path.relpath(os.path.join(dirname, filename), directory))
     return map(lambda filename: os.path.join(base_path, filename), files) if base_path else files
-
-
-def read_json(path):
-    """Returns the contents of the specified file, if it exists; otherwise, None."""
-    if not os.path.exists(path):
-        return None
-    
-    with open(path) as f:
-        return json.load(f)
