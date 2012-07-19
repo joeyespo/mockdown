@@ -23,7 +23,7 @@ class MockupGraph(object):
 class Mockup(object):
     def __init__(self, project_directory, path, is_default=False):
         relative_path = os.path.relpath(path, project_directory)
-        urlpath = posixpath.normpath(relative_path)
+        urlpath = relative_path.replace(os.sep, posixpath.sep)
         self.project_directory = project_directory
         self.path = path
         self.is_existing = os.path.exists(path)
