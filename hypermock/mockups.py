@@ -92,9 +92,7 @@ def load_unlisted_files(mockups, project_directory, supported_extensions):
     """Returns the Mockups from the specified list of files that are not listed."""
     paths = []
     for dirname, dirnames, filenames in os.walk(project_directory):
-        for filename in filenames:
-            if os.path.splitext(filename)[1] in supported_extensions:
-                paths.append(os.path.join(dirname, filename))
+        paths += (os.path.join(dirname, filename) for filename in filenames if os.path.splitext(filename)[1] in supported_extensions)
     listed = [mockup.path for mockup in mockups]
     return [Mockup(project_directory, path) for path in paths if path not in listed]
 
