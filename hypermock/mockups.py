@@ -90,7 +90,11 @@ def load_relationship_mockups(filename, project_directory):
 
 def load_unlisted_files(mockups, project_directory, supported_extensions):
     """Returns the Mockups from the specified list of files that are not listed."""
-    paths = list_files(project_directory, supported_extensions, project_directory)
+    paths = []
+    for dirname, dirnames, filenames in os.walk(project_directory):
+        for filename in filenames:
+            if os.path.splitext(filename)[1] in supported_extensions:
+                paths.append(os.path.join(dirname, filename))
     listed = [mockup.path for mockup in mockups]
     return [Mockup(project_directory, path) for path in paths if path not in listed]
 
@@ -101,13 +105,3 @@ def mockup_from_path(relationships, path):
         if mockup.path == path:
             return mockup
     return None
-
-
-def list_files(directory, extensions=None, base_path=None):
-    """Get a list of files, recursively, for the specified directory and list of extensions."""
-    files = []
-    for dirname, dirnames, filenames in os.walk(directory):
-        for filename in filenames:
-            if not extensions or os.path.splitext(filename)[1] in extensions:
-                files.append(os.path.relpath(os.path.join(dirname, filename), directory))
-    return map(lambda filename: os.path.join(base_path, filename), files) if base_path else files
