@@ -163,3 +163,23 @@ a:hover {
     width: 200px; /* <RightColumnWidth> */
     margin-left: -200px; /*  -<RightColumnWidth> */
 }
+
+.project .navigation {
+    margin: 24px;
+}
+
+.button:link,
+.button:visited {
+    display: block;
+    width: 6em;
+    padding: 0.2em;
+    line-height: 2;
+    background-color: #9BE;
+    border: 1px solid #368;
+    color: #000;
+    text-decoration: none;
+    text-align: center;
+}
+.button:hover {
+    background-color: #69b;
+}
