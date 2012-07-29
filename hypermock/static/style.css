@@ -158,14 +158,14 @@ a:hover {
     margin-left: -100%;
 }
 
+.project .navigation {
+    margin: 24px;
+}
+
 .tools {
     float: left;
     width: 200px; /* <RightColumnWidth> */
     margin-left: -200px; /* -<RightColumnWidth> */
-}
-
-.project .navigation {
-    margin: 24px;
 }
 
 .button:link,
