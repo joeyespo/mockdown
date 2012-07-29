@@ -168,6 +168,24 @@ a:hover {
     margin-left: -200px; /* -<RightColumnWidth> */
 }
 
+.tools .toolbox {
+    margin: 24px;
+}
+
+.tools .toolbox .tool {
+    margin-bottom: 12px;
+    padding: 24px;
+}
+.tools .toolbox .button:link,
+.tools .toolbox .button:visited {
+    background-color: #3d6;
+    border: 1px solid #386;
+    color: #253;
+}
+.tools .toolbox .button:hover {
+    background-color: #4f8;
+}
+
 .button:link,
 .button:visited {
     display: block;
