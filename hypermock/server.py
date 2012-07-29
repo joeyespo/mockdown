@@ -5,7 +5,7 @@ Hypermock server to create mockup relationships and add comments.
 """
 
 import os
-from flask import Flask, render_template, url_for, abort, safe_join, send_from_directory
+from flask import Flask, render_template, abort, send_from_directory
 from .mockups import graph_mockups, get_mockup
 
 
