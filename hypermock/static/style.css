@@ -158,38 +158,32 @@ a:hover {
     margin-left: -100%;
 }
 
-.project .navigation {
+.pane {
     margin: 24px;
 }
-
-.project h2,
-.tools h2 {
+.pane h2 {
     font-weight: bold;
     margin-bottom: 6px;
     color: #555;
 }
 
-.tools {
+.subtools {
     float: left;
     width: 200px; /* <RightColumnWidth> */
     margin-left: -200px; /* -<RightColumnWidth> */
 }
 
-.tools .toolbox {
-    margin: 24px;
+.project .button {
+    margin-bottom: 12px;
 }
 
-.tools .toolbox .tool {
-    margin-bottom: 12px;
-    padding: 24px;
-}
-.tools .toolbox .button:link,
-.tools .toolbox .button:visited {
+.project .tool:link,
+.project .tool:visited {
     background-color: #3d6;
     border: 1px solid #386;
     color: #253;
 }
-.tools .toolbox .button:hover {
+.project .tool:hover {
     background-color: #4f8;
 }
 
