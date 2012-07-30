@@ -23,3 +23,7 @@ $('.hyperlinkTool').click(function() {
     setTool('hyperlink');
     return false;
 });
+
+$(function() {
+    setTool('pointer');
+});
