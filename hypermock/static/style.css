@@ -73,6 +73,22 @@ a:hover {
     text-decoration: underline;
 }
 
+.button:link,
+.button:visited {
+    display: block;
+    width: 6em;
+    padding: 0.2em;
+    line-height: 2;
+    background-color: #9BE;
+    border: 1px solid #368;
+    color: #235;
+    text-decoration: none;
+    text-align: center;
+}
+.button:hover {
+    background-color: #69b;
+}
+
 .empty-list {
     margin: 64px 0;
 }
@@ -185,20 +201,4 @@ a:hover {
 }
 .project .tool:hover {
     background-color: #4f8;
-}
-
-.button:link,
-.button:visited {
-    display: block;
-    width: 6em;
-    padding: 0.2em;
-    line-height: 2;
-    background-color: #9BE;
-    border: 1px solid #368;
-    color: #235;
-    text-decoration: none;
-    text-align: center;
-}
-.button:hover {
-    background-color: #69b;
 }
