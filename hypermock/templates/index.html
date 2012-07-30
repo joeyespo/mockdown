@@ -5,19 +5,19 @@
     <div class="relationships">
         {% if not graph.mockups %}
             <h1>Available Mockups</h1>
-            <div class="empty-list">
+            <div class="emptyList">
                 <span>No mockups found.</span>
             </div>
         {% endif %}
         
         {% if graph.relationships %}
-            <div class="mockup-list relationships">
+            <div class="mockupList relationships">
                 <h1>Site Map</h1>
                 <!-- TODO: show graph instead of list -->
                 <ul>
                     {% for mockup in graph.relationships %}
                         <li>
-                            <a href="{{ mockup.url }}"><img src="{{ mockup.image }}" {{ 'class="default-mockup"'|safe if mockup.is_default }} alt="Mockup thumbnail" width="128" height="128" /></a>
+                            <a href="{{ mockup.url }}"><img src="{{ mockup.image }}" {{ 'class="defaultMockup"'|safe if mockup.is_default }} alt="Mockup thumbnail" width="128" height="128" /></a>
                             <a href="{{ mockup.url }}">{{ mockup.name }}</a>
                         </li>
                     {% endfor %}
@@ -26,7 +26,7 @@
         {% endif %}
         
         {% if graph.unlisted %}
-            <div class="mockup-list unlisted">
+            <div class="mockupList unlisted">
                 <h1>{{ 'Unused' if graph.relationships else 'Available' }} Mockups</h1>
                 <ul>
                     {% for mockup in graph.unlisted %}
