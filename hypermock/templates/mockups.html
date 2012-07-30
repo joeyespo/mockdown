@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block scripts %}
+    <script src="{{ url_for('.static', filename='jquery.js') }}"></script>
     <script src="{{ url_for('.static', filename='hypermock.js') }}"></script>
 {% endblock %}
 
