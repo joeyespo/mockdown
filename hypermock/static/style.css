@@ -200,10 +200,10 @@ a:hover {
 
 .project .selected.tool:link,
 .project .selected.tool:visited {
-    background-color: #dfd;
+    background-color: #fff;
 }
 .project .selected.tool:hover {
-    background-color: #fff;
+    background-color: #dfd;
 }
 
 .subtools {
