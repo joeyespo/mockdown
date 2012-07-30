@@ -163,17 +163,6 @@ a:hover {
     width: 100%;
 }
 
-.preview {
-    margin: 0 200px 0 230px; /* "0 <RightColumnWidth> 0 <LeftColumnWidth> */
-    text-align: center;
-}
-
-.project {
-    float: left;
-    width: 230px; /* <LeftColumnWidth> */
-    margin-left: -100%;
-}
-
 .pane {
     margin: 24px;
 }
@@ -183,10 +172,15 @@ a:hover {
     color: #555;
 }
 
-.subtools {
+.preview {
+    margin: 0 200px 0 230px; /* "0 <RightColumnWidth> 0 <LeftColumnWidth> */
+    text-align: center;
+}
+
+.project {
     float: left;
-    width: 200px; /* <RightColumnWidth> */
-    margin-left: -200px; /* -<RightColumnWidth> */
+    width: 230px; /* <LeftColumnWidth> */
+    margin-left: -100%;
 }
 
 .project .button {
@@ -201,4 +195,10 @@ a:hover {
 }
 .project .tool:hover {
     background-color: #4f8;
+}
+
+.subtools {
+    float: left;
+    width: 200px; /* <RightColumnWidth> */
+    margin-left: -200px; /* -<RightColumnWidth> */
 }
