@@ -173,7 +173,7 @@ a:hover {
     color: #555;
 }
 
-.preview {
+.previewPane {
     margin: 0 200px 0 230px; /* "0 <RightColumnWidth> 0 <LeftColumnWidth> */
     text-align: center;
 }
