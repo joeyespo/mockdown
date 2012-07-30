@@ -1,7 +1,25 @@
 // hypermock.js
 
-// Values are: 'pointer', 'comment', 'hyperlink'
+var availableTools = ['pointer', 'comment', 'hyperlink'];
 var selectedTool = '';
+
+function initTools() {
+    $.each(availableTools, function(index, tool) {
+        initTool(tool);
+    });
+}
+
+function initTool(tool) {
+    var element = $('.' + tool + 'Tool');
+    if(element.length == 0) {
+        alert('"' + tool + '" tool not found.');
+        return true;
+    }
+    element.click(function() {
+        setTool(tool);
+        return false;
+    });
+}
 
 function setTool(tool) {
     $('.tool').removeClass('selected');
@@ -9,21 +27,7 @@ function setTool(tool) {
     selectedTool = tool;
 }
 
-$('.pointerTool').click(function() {
-    setTool('pointer');
-    return false;
-});
-
-$('.commentTool').click(function() {
-    setTool('comment');
-    return false;
-});
-
-$('.hyperlinkTool').click(function() {
-    setTool('hyperlink');
-    return false;
-});
-
 $(function() {
+    initTools();
     setTool('pointer');
 });
