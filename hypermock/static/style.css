@@ -178,6 +178,10 @@ a:hover {
     text-align: center;
 }
 
+.preview.toolSelected {
+  cursor: crosshair;
+}
+
 .project {
     float: left;
     width: 230px; /* <LeftColumnWidth> */

@@ -12,7 +12,7 @@ function initTools() {
 
 function initTool(tool) {
     var element = $('.' + tool + 'Tool');
-    if(element.length == 0) {
+    if(element.length === 0) {
         alert('"' + tool + '" tool not found.');
         return true;
     }
@@ -25,8 +25,17 @@ function initTool(tool) {
 function setTool(tool) {
     $('.tool').removeClass('selected');
     $('.' + tool + 'Tool').addClass('selected');
+    $('.preview').toggleClass('toolSelected', tool !== pointerTool);
     selectedTool = tool;
 }
+
+$('.preview').mousedown(function() {
+    if($(this).hasClass('toolSelected')) {
+        // TODO: implement dragging
+        alert('TODO: Start dragging');
+    }
+    return false;
+});
 
 $(function() {
     initTools();
