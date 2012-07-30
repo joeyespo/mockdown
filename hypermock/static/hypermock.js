@@ -1,6 +1,7 @@
 // hypermock.js
 
-var availableTools = ['pointer', 'comment', 'hyperlink'];
+var pointerTool = 'pointer';
+var availableTools = [pointerTool, 'comment', 'hyperlink'];
 var selectedTool = '';
 
 function initTools() {
@@ -29,5 +30,5 @@ function setTool(tool) {
 
 $(function() {
     initTools();
-    setTool('pointer');
+    setTool(pointerTool);
 });
