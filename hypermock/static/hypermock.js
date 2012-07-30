@@ -1,19 +1,25 @@
 // hypermock.js
 
+// Values are: 'pointer', 'comment', 'hyperlink'
+var selectedTool = '';
+
+function setTool(tool) {
+    $('.tool').removeClass('selected');
+    $('.' + tool + 'Tool').addClass('selected');
+    selectedTool = tool;
+}
+
 $('.pointerTool').click(function() {
-    // TODO: implement
-    alert('TODO: Pointer');
+    setTool('pointer');
     return false;
 });
 
 $('.commentTool').click(function() {
-    // TODO: implement
-    alert('TODO: Add comment');
+    setTool('comment');
     return false;
 });
 
 $('.hyperlinkTool').click(function() {
-    // TODO: implement
-    alert('TODO: Add link');
+    setTool('hyperlink');
     return false;
 });

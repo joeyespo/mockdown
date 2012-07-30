@@ -198,6 +198,14 @@ a:hover {
     background-color: #4f8;
 }
 
+.project .selected.tool:link,
+.project .selected.tool:visited {
+    background-color: #fff;
+}
+.project .selected.tool:hover {
+    background-color: #dfd;
+}
+
 .subtools {
     float: left;
     width: 200px; /* <RightColumnWidth> */
