@@ -29,6 +29,23 @@ function setTool(tool) {
     selectedTool = tool;
 }
 
+function createBox(rect) {
+    switch(selectedTool) {
+        case 'comment': return createComment(rect);
+        case 'hyperlink': return createHyperlink(rect);
+    }
+}
+
+function createComment(rect) {
+    // TODO: create comment
+    alert('TODO: Create comment');
+}
+
+function createHyperlink(rect) {
+    // TODO: create comment
+    alert('TODO: Create hyperlink');
+}
+
 // Drag functionality
 var drag = null;
 $('.preview').mousedown(function(e) {
@@ -53,7 +70,8 @@ $('.preview, .popupToolPreview').mouseup(function(e) {
     var rect = {x: popup.position().left, y: popup.position().top, width: popup.width(), height: popup.height()};
     drag = null;
     popup.css({left: 0, top: 0, width: 0, height: 0}).hide();
-    // TODO: create the box
+    if(rect.width > 0 && rect.height > 0)
+        createBox(rect);
     return false;
 });
 
