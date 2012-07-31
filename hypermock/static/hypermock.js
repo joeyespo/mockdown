@@ -54,21 +54,21 @@ $('.preview').mousedown(function(e) {
     if(!$(this).hasClass('toolSelected'))
         return true;
     drag = {x: e.clientX, y: e.clientY};
-    $('.popupToolPreview').css({left: drag.x, top: drag.y, width: 0, height: 0}).show();
+    $('.overlayPreview').css({left: drag.x, top: drag.y, width: 0, height: 0}).show();
     return false;
 });
-$('.preview, .popupToolPreview').mousemove(function(e) {
+$('.preview, .overlayPreview').mousemove(function(e) {
     if(drag === null)
         return true;
-    var popup = $('.popupToolPreview');
+    var popup = $('.overlayPreview');
     drag = {x: e.clientX, y: e.clientY};
     popup.css({width: Math.max(drag.x - popup.position().left, 0), height: Math.max(drag.y - popup.position().top, 0)});
     return false;
 });
-$('.preview, .popupToolPreview').mouseup(function(e) {
+$('.preview, .overlayPreview').mouseup(function(e) {
     if(drag === null)
         return true;
-    var popup = $('.popupToolPreview');
+    var popup = $('.overlayPreview');
     var rect = {x: popup.position().left, y: popup.position().top, width: popup.width(), height: popup.height()};
     drag = null;
     popup.css({left: 0, top: 0, width: 0, height: 0}).hide();
