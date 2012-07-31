@@ -42,7 +42,7 @@ function createComment(rect) {
 }
 
 function createHyperlink(rect) {
-    // TODO: create comment
+    // TODO: create hyperlink
     alert('TODO: Create hyperlink');
 }
 
