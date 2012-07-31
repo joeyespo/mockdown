@@ -44,6 +44,8 @@ function createComment(rect) {
 function createHyperlink(rect) {
     // TODO: create hyperlink
     alert('TODO: Create hyperlink');
+
+    // TODO: show potential mockups to link to
 }
 
 // TODO: better drag-to-create functionality
