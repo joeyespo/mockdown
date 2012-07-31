@@ -46,6 +46,8 @@ function createHyperlink(rect) {
     alert('TODO: Create hyperlink');
 }
 
+// TODO: better drag-to-create functionality
+
 // Drag functionality
 var drag = null;
 $('.preview').mousedown(function(e) {
