@@ -29,11 +29,27 @@ function setTool(tool) {
     selectedTool = tool;
 }
 
-$('.preview').mousedown(function() {
-    if($(this).hasClass('toolSelected')) {
-        // TODO: implement dragging
-        alert('TODO: Start dragging');
-    }
+// Drag functionality
+var drag = null;
+$('.preview').mousedown(function(e) {
+    if(!$(this).hasClass('toolSelected'))
+        return true;
+    drag = {x: e.clientX, y: e.clientY};
+    // TODO: create a box preview
+    return false;
+});
+$('.preview').mousemove(function(e) {
+    if(!$(this).hasClass('toolSelected') || drag === null)
+        return true;
+    // TODO: resize the box preview
+    drag = {x: e.clientX, y: e.clientY};
+    return false;
+});
+$('.preview').mouseup(function(e) {
+    if(!$(this).hasClass('toolSelected') || drag === null)
+        return true;
+    // TODO: create the box
+    drag = null;
     return false;
 });
 
