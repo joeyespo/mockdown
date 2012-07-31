@@ -215,3 +215,18 @@ a:hover {
     width: 200px; /* <RightColumnWidth> */
     margin-left: -200px; /* -<RightColumnWidth> */
 }
+
+.popups .popup {
+  display: none;
+}
+
+.popupToolPreview {
+  position: absolute;
+  border: 2px dotted #266;
+  background-color: rgba(50, 200, 50, 0.2);
+  cursor: crosshair;
+  width: 0;
+  height: 0;
+  left: 0;
+  top: 0;
+}

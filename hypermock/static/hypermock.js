@@ -35,21 +35,25 @@ $('.preview').mousedown(function(e) {
     if(!$(this).hasClass('toolSelected'))
         return true;
     drag = {x: e.clientX, y: e.clientY};
-    // TODO: create a box preview
+    $('.popupToolPreview').css({left: drag.x, top: drag.y, width: 0, height: 0}).show();
     return false;
 });
-$('.preview').mousemove(function(e) {
-    if(!$(this).hasClass('toolSelected') || drag === null)
+$('.preview, .popupToolPreview').mousemove(function(e) {
+    if(drag === null)
         return true;
-    // TODO: resize the box preview
+    var popup = $('.popupToolPreview');
     drag = {x: e.clientX, y: e.clientY};
+    popup.css({width: Math.max(drag.x - popup.position().left, 0), height: Math.max(drag.y - popup.position().top, 0)});
     return false;
 });
-$('.preview').mouseup(function(e) {
-    if(!$(this).hasClass('toolSelected') || drag === null)
+$('.preview, .popupToolPreview').mouseup(function(e) {
+    if(drag === null)
         return true;
-    // TODO: create the box
+    var popup = $('.popupToolPreview');
+    var rect = {x: popup.position().left, y: popup.position().top, width: popup.width(), height: popup.height()};
     drag = null;
+    popup.css({left: 0, top: 0, width: 0, height: 0}).hide();
+    // TODO: create the box
     return false;
 });
 
