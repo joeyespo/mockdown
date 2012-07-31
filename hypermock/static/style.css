@@ -204,10 +204,10 @@ a:hover {
 
 .project .selected.tool:link,
 .project .selected.tool:visited {
-    background-color: #fff;
+    background-color: #efe;
 }
 .project .selected.tool:hover {
-    background-color: #dfd;
+    background-color: #fff;
 }
 
 .subtools {
