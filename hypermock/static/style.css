@@ -15,167 +15,167 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-    display: block;
+  display: block;
 }
 body {
-    line-height: 1;
+  line-height: 1;
 }
 ol, ul {
-    list-style: none;
+  list-style: none;
 }
 blockquote, q {
-    quotes: none;
+  quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-    content: '';
-    content: none;
+  content: '';
+  content: none;
 }
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 /* Restore monospace fonts */
 pre, code, kbd, samp, tt {
-    font-family: monospace,monospace;
-    font-size: 1em;
+  font-family: monospace,monospace;
+  font-size: 1em;
 }
 
 
 /* Main styles */
 body {
-    margin: 0;
-    padding: 0;
-    background: #eee;
-    font: 16px Arial, Georgia, serif;
+  margin: 0;
+  padding: 0;
+  background: #eee;
+  font: 16px Arial, Georgia, serif;
 }
 
 h1 {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 a {
-    color: #38f;
-    font-size: 14px;
-    text-decoration: none;
+  color: #38f;
+  font-size: 14px;
+  text-decoration: none;
 }
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .button:link,
 .button:visited {
-    display: block;
-    width: 6em;
-    padding: 0.2em;
-    line-height: 2;
-    background-color: #9BE;
-    border: 1px solid #368;
-    color: #235;
-    text-decoration: none;
-    text-align: center;
+  display: block;
+  width: 6em;
+  padding: 0.2em;
+  line-height: 2;
+  background-color: #9BE;
+  border: 1px solid #368;
+  color: #235;
+  text-decoration: none;
+  text-align: center;
 }
 .button:hover {
-    background-color: #bdf;
+  background-color: #bdf;
 }
 
 .emptyList {
-    margin: 64px 0;
+  margin: 64px 0;
 }
 
 .emptyList span {
-    font-size: 12px;
-    color: #333;
-    border: 1px solid #888;
-    background-color: #ccc;
-    padding: 32px 48px;
+  font-size: 12px;
+  color: #333;
+  border: 1px solid #888;
+  background-color: #ccc;
+  padding: 32px 48px;
 }
 
 .mockupList {
-   float: left;
-   width: 100%;
-   overflow: hidden;
-   position: relative;
+ float: left;
+ width: 100%;
+ overflow: hidden;
+ position: relative;
 }
 .mockupList ul {
-   clear: left;
-   float: left;
-   list-style: none;
-   margin: 0;
-   padding: 0;
-   position: relative;
-   left: 50%;
-   text-align: center;
+ clear: left;
+ float: left;
+ list-style: none;
+ margin: 0;
+ padding: 0;
+ position: relative;
+ left: 50%;
+ text-align: center;
 }
 .mockupList ul li {
-   display: block;
-   float: left;
-   list-style: none;
-   margin: 12px;
-   padding: 0;
-   position: relative;
-   right: 50%;
+ display: block;
+ float: left;
+ list-style: none;
+ margin: 12px;
+ padding: 0;
+ position: relative;
+ right: 50%;
 }
 
 .mockupList a {
-    display: block;
-    width: 130px;
+  display: block;
+  width: 130px;
 }
 
 .mockupList a:hover img,
 .mockupList a:hover img.defaultMockup {
-    box-shadow: 0 0 6px 6px #88f;
-    -moz-box-shadow: 0 0 6px 6px #88f;
-    -webkit-box-shadow: 0 0 6px 6px #88f;
+  box-shadow: 0 0 6px 6px #88f;
+  -moz-box-shadow: 0 0 6px 6px #88f;
+  -webkit-box-shadow: 0 0 6px 6px #88f;
 }
 
 .mockupList a img {
-    display: block;
-    margin: 0 auto 8px;
-    border: 1px solid #333;
+  display: block;
+  margin: 0 auto 8px;
+  border: 1px solid #333;
 }
 
 .mockupList a img.defaultMockup {
-    box-shadow: 0 0 8px 8px #ff6;
-    -moz-box-shadow: 0 0 8px 8px #ff6;
-    -webkit-box-shadow: 0 0 8px 8px #ff6;
+  box-shadow: 0 0 8px 8px #ff6;
+  -moz-box-shadow: 0 0 8px 8px #ff6;
+  -webkit-box-shadow: 0 0 8px 8px #ff6;
 }
 
 .relationships {
-    text-align: center;
+  text-align: center;
 }
 
 .relationships h1 {
-    margin: 24px 12px 12px;
+  margin: 24px 12px 12px;
 }
 
 .previewContainer {
-    float: left;
-    width: 100%;
+  float: left;
+  width: 100%;
 }
 
 .pane {
-    margin: 24px;
+  margin: 24px;
 }
 .pane h2 {
-    font-weight: bold;
-    margin-bottom: 6px;
-    color: #555;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #555;
 }
 
 .previewPane {
-    margin: 0 200px 0 230px; /* "0 <RightColumnWidth> 0 <LeftColumnWidth> */
-    text-align: center;
+  margin: 0 200px 0 230px; /* "0 <RightColumnWidth> 0 <LeftColumnWidth> */
+  text-align: center;
 }
 
 .preview.toolSelected {
@@ -183,37 +183,37 @@ a:hover {
 }
 
 .project {
-    float: left;
-    width: 230px; /* <LeftColumnWidth> */
-    margin-left: -100%;
+  float: left;
+  width: 230px; /* <LeftColumnWidth> */
+  margin-left: -100%;
 }
 
 .project .button {
-    margin-bottom: 12px;
+  margin-bottom: 12px;
 }
 
 .project .tool:link,
 .project .tool:visited {
-    background-color: #3d6;
-    border: 1px solid #386;
-    color: #253;
+  background-color: #3d6;
+  border: 1px solid #386;
+  color: #253;
 }
 .project .tool:hover {
-    background-color: #4f8;
+  background-color: #4f8;
 }
 
 .project .selected.tool:link,
 .project .selected.tool:visited {
-    background-color: #efe;
+  background-color: #efe;
 }
 .project .selected.tool:hover {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 .subtools {
-    float: left;
-    width: 200px; /* <RightColumnWidth> */
-    margin-left: -200px; /* -<RightColumnWidth> */
+  float: left;
+  width: 200px; /* <RightColumnWidth> */
+  margin-left: -200px; /* -<RightColumnWidth> */
 }
 
 .popups .popup {
