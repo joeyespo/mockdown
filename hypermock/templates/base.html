@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title>{% block title %}Hypermock{% endblock %}</title>
+    <link rel="shortcut icon" href="{{ url_for('.static', filename='favicon.ico') }}">
     <link rel="stylesheet" href="{{ url_for('.static', filename='style.css') }}" />
     {% block styles %}{% endblock %}
     {% block priority_scripts %}{% endblock %}
@@ -11,7 +12,6 @@
     <div class="page">
         {% block page %}{% endblock %}
     </div>
-    
     {% block scripts %}{% endblock %}
 </body>
 </html>
