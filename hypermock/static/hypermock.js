@@ -4,9 +4,6 @@ var pointerTool = 'pointer';
 var availableTools = [pointerTool, 'comment', 'hyperlink'];
 var selectedTool = '';
 
-var currentTags = [];
-var currentUiTags = [];
-
 function initTools() {
     $.each(availableTools, function(index, tool) {
         initTool(tool);
@@ -40,12 +37,14 @@ function createBox(rect) {
 }
 
 function createComment(rect) {
-    addTag('comment', rect);
-    // TODO: begin editing comment
+    // TODO: create comment
+    alert('TODO: Create comment');
 }
 
 function createHyperlink(rect) {
-    addTag('hyperlink', rect);
+    // TODO: create hyperlink
+    alert('TODO: Create hyperlink');
+
     // TODO: show potential mockups to link to
 }
 
@@ -80,42 +79,7 @@ $('.preview, .overlayPreview').mouseup(function(e) {
     return false;
 });
 
-function addTag(type, bounds) {
-    var tag = {type: type, bounds: bounds};
-    currentTags.push(tag);
-    createUiTag(tag);
-    return tag;
-}
-
-function removeTag(tag) {
-    // TODO: implement
-}
-
-function createUiTag(tag) {
-    // TODO: create element
-    alert('TODO: Create ' + tag.type + ' tag');
-    var uiTag = {
-        element: null,
-        tag: tag
-    };
-    currentUiTags.push(uiTag);
-    return uiTag;
-}
-
-function deleteUiTag(uiTag) {
-    // TODO: implement
-}
-
-function initTags() {
-    if(!loadedTags)
-        return;
-    $.each(loadedTags, function(index, tag) {
-        addTag(tag.type, tag.bounds);
-    });
-}
-
 $(function() {
     initTools();
     setTool(pointerTool);
-    initTags();
 });
