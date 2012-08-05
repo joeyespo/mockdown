@@ -10,10 +10,9 @@ function updateTools() {
 
 function updatePreview() {
     var bounds = editor.newTagPreview;
-    var properties = bounds !== null ?
+    $('.overlayPreview').css(bounds !== null ?
         {display: 'block', left: bounds.x, top: bounds.y, width: bounds.width, height: bounds.height} :
-        {display: 'none'};
-    $('.overlayPreview').css(properties);
+        {display: 'none'});
 }
 
 
