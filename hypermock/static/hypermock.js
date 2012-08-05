@@ -1,11 +1,16 @@
 // hypermock.js
 
 // TODO: Clean this code up
+// TODO: better drag-to-create functionality
 
+
+// Tool info
 var pointerTool = 'pointer';
 var availableTools = [pointerTool, 'comment', 'hyperlink'];
 var selectedTool = '';
 
+
+// Behavior
 var currentTags = [];
 var currentUiTags = [];
 
@@ -33,7 +38,6 @@ function createHyperlink(rect) {
     // TODO: show potential mockups to link to
 }
 
-// TODO: better drag-to-create functionality
 
 // Drag functionality
 var drag = null;
@@ -89,6 +93,7 @@ function createUiTag(tag) {
 function deleteUiTag(uiTag) {
     // TODO: implement
 }
+
 
 // Initialization
 function initTools() {
