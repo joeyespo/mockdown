@@ -83,11 +83,9 @@ Editor.prototype.updateNewTag = function(x, y) {
         this.newTagPreview.update(x, y);
 };
 Editor.prototype.endNewTag = function() {
-    if(this.newTagPreview === null)
-        return null;
     var bounds = this.newTagPreview;
     this.newTagPreview = null;
-    return bounds.width > 0 && bounds.height > 0 ?
+    return bounds !== null && bounds.width > 0 && bounds.height > 0 ?
         this.newTag(bounds) :
         null;
 };
