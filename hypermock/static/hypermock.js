@@ -40,7 +40,7 @@ $('.preview, .overlayPreview').mousemove(function(e) {
     return false;
 });
 $('.preview, .overlayPreview').mouseup(function(e) {
-    //editor.endNewTag();
+    // TODO: editor.endNewTag();
     // TODO: remove this once callbacks are in place
     if(editor.newTagPreview === null)
         return false;
