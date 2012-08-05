@@ -16,7 +16,7 @@ var currentUiTags = [];
 
 function setTool(tool) {
     $('.tool').removeClass('selected');
-    $('.' + tool + 'Tool').addClass('selected');
+    $('.tool[data-tool="' + tool + '"]').addClass('selected');
     $('.preview').toggleClass('toolSelected', tool !== pointerTool);
     selectedTool = tool;
 }
@@ -103,7 +103,7 @@ function initTools() {
 }
 
 function initTool(tool) {
-    var element = $('.' + tool + 'Tool');
+    var element = $('.tool[data-tool="' + tool + '"]');
     if(element.length === 0) {
         alert('"' + tool + '" tool not found.');
         return true;
