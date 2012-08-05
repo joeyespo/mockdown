@@ -23,13 +23,13 @@ Tag.Create = function(type, bounds, data) {
 };
 
 function CommentTag(bounds, text) {
-    Tag(bounds);
+    Tag.call(this, bounds, text);
     this.text = text || '';
 }
 CommentTag.prototype = new Tag();
 
 function HyperlinkTag(bounds, href) {
-    Tag(bounds);
+    Tag.call(this, bounds, href);
     this.href = href || '';
 }
 HyperlinkTag.prototype = new Tag();
