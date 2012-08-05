@@ -7,7 +7,8 @@ function Tool(name, tagClass) {
     this.tag = tagClass;
 }
 
-function Tag(bounds) {
+function Tag(type, bounds) {
+    this.type = type;
     this.bounds = bounds || {x: 0, y: 0, width: 0, height: 0};
 }
 Tag.Create = function(type, bounds, data) {
@@ -23,14 +24,14 @@ Tag.Create = function(type, bounds, data) {
 };
 
 function CommentTag(bounds, text) {
-    Tag.call(this, bounds, text);
+    Tag.call(this, CommentTag.Name, bounds, text);
     this.text = text || '';
 }
 CommentTag.Name = 'comment';
 CommentTag.prototype = new Tag();
 
 function HyperlinkTag(bounds, href) {
-    Tag.call(this, bounds, href);
+    Tag.call(this, HyperlinkTag.Name, bounds, href);
     this.href = href || '';
 }
 HyperlinkTag.Name = 'hyperlink';
