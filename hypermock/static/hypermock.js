@@ -10,6 +10,34 @@ var availableTools = [pointerTool, 'comment', 'hyperlink'];
 var selectedTool = '';
 
 
+// Tag classes
+function Tag(bounds) {
+    this.bounds = bounds || {x: 0, y: 0, width: 0, height: 0};
+    this.element = null;
+}
+Tag.prototype.createElement = function() {
+    var element = $('<div class="tag"></div>');
+    // TODO: attach element to the DOM
+    this.element = element;
+};
+Tag.prototype.updateElement = function() {
+    //if(this.element)
+    //    $(this.element).
+};
+
+function CommentTag(bounds, text) {
+    Tag(bounds);
+    this.text = '';
+}
+CommentTag.prototype = new Tag();
+
+function HyperlinkTag(bounds, href) {
+    Tag(bounds);
+    this.href = href;
+}
+HyperlinkTag.prototype = new Tag();
+
+
 // Behavior
 var currentTags = [];
 var currentUiTags = [];
