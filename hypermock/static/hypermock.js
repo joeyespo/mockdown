@@ -27,13 +27,13 @@ Tag.prototype.updateElement = function() {
 
 function CommentTag(bounds, text) {
     Tag(bounds);
-    this.text = '';
+    this.text = text || '';
 }
 CommentTag.prototype = new Tag();
 
 function HyperlinkTag(bounds, href) {
     Tag(bounds);
-    this.href = href;
+    this.href = href || '';
 }
 HyperlinkTag.prototype = new Tag();
 
