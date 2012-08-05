@@ -12,10 +12,10 @@ function Tag(bounds) {
 }
 Tag.Create = function(type, bounds, data) {
     switch(type) {
-        case 'comment':
-            return CommentTag(bounds, data);
-        case 'comment':
-            return HyperlinkTag(bounds, data);
+        case CommentTag.Name:
+            return new CommentTag(bounds, data);
+        case HyperlinkTag.Name:
+            return new HyperlinkTag(bounds, data);
         default:
             alert('Error: "' + type + '" tag not supported.');
             return null;
@@ -26,10 +26,12 @@ function CommentTag(bounds, text) {
     Tag.call(this, bounds, text);
     this.text = text || '';
 }
+CommentTag.Name = 'comment';
 CommentTag.prototype = new Tag();
 
 function HyperlinkTag(bounds, href) {
     Tag.call(this, bounds, href);
     this.href = href || '';
 }
+HyperlinkTag.Name = 'hyperlink';
 HyperlinkTag.prototype = new Tag();
