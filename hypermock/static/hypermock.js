@@ -31,7 +31,7 @@ $('.preview').mousedown(function(e) {
     return false;
 });
 $('.preview, .overlayPreview').mousemove(function(e) {
-    editor.newTagPreview.update(e.clientX, e.clientY);
+    editor.updateNewTag(e.clientX, e.clientY);
     // TODO: remove this once callbacks are in place
     if(editor.newTagPreview !== null)
         updatePreview();

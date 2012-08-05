@@ -78,6 +78,10 @@ Editor.prototype.selectTool = function(tool) {
 Editor.prototype.startNewTag = function(x, y) {
     this.newTagPreview = new NewTagPreview(x, y);
 };
+Editor.prototype.updateNewTag = function(x, y) {
+    if(this.newTagPreview !== null)
+        this.newTagPreview.update(x, y);
+};
 Editor.prototype.endNewTag = function() {
     if(this.newTagPreview === null)
         return null;
