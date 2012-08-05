@@ -46,6 +46,7 @@ function Editor() {
     this.selectedTool = Editor.PointerTool;
     this.selectedTag = null;
     this.newTagPreview = null;
+    // TODO: callbacks
 }
 Editor.PointerTool = new Tool('pointer', null);
 Editor.CommentTool = new Tool('comment', CommentTag);
