@@ -31,19 +31,21 @@ $('.preview').mousedown(function(e) {
     return false;
 });
 $('.preview, .overlayPreview').mousemove(function(e) {
-    if(editor.newTagPreview === null)
-        return true;
     editor.newTagPreview.update(e.clientX, e.clientY);
-    updatePreview();
+    // TODO: remove this once callbacks are in place
+    if(editor.newTagPreview !== null)
+        updatePreview();
     return false;
 });
 $('.preview, .overlayPreview').mouseup(function(e) {
+    //editor.endNewTag();
+    // TODO: remove this once callbacks are in place
     if(editor.newTagPreview === null)
-        return true;
+        return false;
     var tag = editor.endNewTag();
     updatePreview();
+    // TODO: create tag element and begin editing it
     alert('TODO: Create ' + tag.type + ' tag');
-    // TODO: begin editing tag
     return false;
 });
 
