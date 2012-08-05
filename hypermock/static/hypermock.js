@@ -109,9 +109,7 @@ function deleteUiTag(uiTag) {
 }
 
 function initTags() {
-    if(!loadedTags)
-        return;
-    $.each(loadedTags, function(index, tag) {
+    $.each(loadedTags || [], function(index, tag) {
         addTag(tag.type, tag.bounds);
     });
 }
