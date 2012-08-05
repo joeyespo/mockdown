@@ -57,7 +57,7 @@ function createHyperlink(rect) {
 var drag = null;
 $('.preview').mousedown(function(e) {
     if(!$(this).hasClass('toolSelected'))
-        return true;
+        return false;
     drag = {x: e.clientX, y: e.clientY};
     $('.overlayPreview').css({left: drag.x, top: drag.y, width: 0, height: 0}).show();
     return false;
