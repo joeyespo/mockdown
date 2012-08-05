@@ -2,6 +2,8 @@
 
 // TODO: better drag-to-create functionality
 
+
+// Update functions
 function updateTools() {
     $('.tool').removeClass('selected');
     $('.tool[data-tool="' + editor.selectedTool.name + '"]').addClass('selected');
@@ -16,6 +18,7 @@ function updatePreview() {
 }
 
 
+// Event handlers
 $('.tool').click(function() {
     editor.selectTool($(this).data('tool'));
     updateTools();
