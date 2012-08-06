@@ -53,7 +53,7 @@ function initTags() {
     });
 }
 var editor = new Editor();
-editor.newTagPreviewUpdated = updatePreview;
 editor.tagAdded = tagAdded;
+editor.newTagPreviewUpdated = updatePreview;
 updateTools();
 $(initTags);

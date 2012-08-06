@@ -7,10 +7,10 @@ function Editor() {
     this.selectedTool = Editor.PointerTool;
     this.selectedTag = null;
     this.newTagPreview = null;
-    this.newTagPreviewUpdated = null;
     this.tagCreated = null;
     this.tagAdded = null;
     this.tagRemoved = null;
+    this.newTagPreviewUpdated = null;
 }
 Editor.PointerTool = new Tool('pointer', null);
 Editor.CommentTool = new Tool('comment', CommentTag);
