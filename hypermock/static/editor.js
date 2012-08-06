@@ -40,6 +40,15 @@ HyperlinkTag.Name = 'hyperlink';
 HyperlinkTag.prototype = new Tag();
 
 
+// "New tag" preview model
+function NewTagPreview(x, y) {
+    this.x = x;
+    this.y = y;
+    this.width = 0;
+    this.height = 0;
+}
+
+
 // Editor class
 function Editor() {
     this.tags = new TagManager();
@@ -79,8 +88,10 @@ Editor.prototype.startNewTag = function(x, y) {
     this.newTagPreview = new NewTagPreview(x, y);
 };
 Editor.prototype.updateNewTag = function(x, y) {
-    if(this.newTagPreview !== null)
-        this.newTagPreview.update(x, y);
+    if(this.newTagPreview !== null) {
+        this.newTagPreview.width = Math.max(x - this.newTagPreview.x, 0);
+        this.newTagPreview.height = Math.max(y - this.newTagPreview.y, 0);
+    }
 };
 Editor.prototype.endNewTag = function() {
     var bounds = this.newTagPreview;
@@ -111,17 +122,4 @@ TagManager.prototype.add = function(tag) {
 TagManager.prototype.remove = function(tag) {
     // TODO: implement
     return true;
-};
-
-
-// "New tag" preview class
-function NewTagPreview(x, y) {
-    this.x = x;
-    this.y = y;
-    this.width = 0;
-    this.height = 0;
-}
-NewTagPreview.prototype.update = function(x, y) {
-    this.width = Math.max(x - this.x, 0);
-    this.height = Math.max(y - this.y, 0);
 };
