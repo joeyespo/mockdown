@@ -3,7 +3,7 @@
 
 // Editor class
 function Editor() {
-    this.tags = new TagManager();
+    this.tags = [];
     this.selectedTool = Editor.PointerTool;
     this.selectedTag = null;
     this.newTagPreview = null;
@@ -64,26 +64,20 @@ Editor.prototype.endNewTag = function() {
 Editor.prototype.createTag = function(bounds, data) {
     if(this.selectedTool === Editor.PointerTool)
         return null;
-    var tag = this.tags.create(this.selectedTool.name, bounds, data);
+    var tag = Tag.Create(this.selectedTool.name, bounds, data);
     if(this.tagCreated)
         this.tagCreated(tag);
+    this.addTag(tag);
     return tag;
 };
-
-
-// Tag manager class
-function TagManager() {
-    this.__tags = [];
-}
-TagManager.prototype.create = function(type, bounds, data) {
-    var tag = Tag.Create(type, bounds, data);
-    this.add(tag);
-    return tag;
+Editor.prototype.addTag = function(tag) {
+    if(!tag)
+        throw new Error('Invalid tag.');
+    this.tags.push(tag);
 };
-TagManager.prototype.add = function(tag) {
-    this.__tags.push(tag);
-};
-TagManager.prototype.remove = function(tag) {
-    // TODO: implement
+Editor.prototype.remove = function(tag) {
+    if(!tag)
+        return false;
+    // TODO: if(!this.tags.contains(tag)) return false;
     return true;
 };
