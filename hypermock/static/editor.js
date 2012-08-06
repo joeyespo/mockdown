@@ -9,6 +9,8 @@ function Editor() {
     this.newTagPreview = null;
     this.newTagPreviewUpdated = null;
     this.tagCreated = null;
+    this.tagAdded = null;
+    this.tagRemoved = null;
 }
 Editor.PointerTool = new Tool('pointer', null);
 Editor.CommentTool = new Tool('comment', CommentTag);
@@ -74,10 +76,14 @@ Editor.prototype.addTag = function(tag) {
     if(!tag)
         throw new Error('Invalid tag.');
     this.tags.push(tag);
+    if(this.tagAdded)
+        this.tagAdded(tag);
 };
 Editor.prototype.remove = function(tag) {
     if(!tag)
         return false;
     // TODO: if(!this.tags.contains(tag)) return false;
+    if(this.tagRemoved)
+        this.tagRemoved(tag);
     return true;
 };
