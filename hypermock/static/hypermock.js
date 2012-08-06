@@ -17,6 +17,10 @@ function updatePreview() {
         {display: 'none'});
 }
 
+function newTagCreated(tag) {
+    alert('TODO: Create ' + tag.type + ' tag');
+}
+
 
 // Event handlers
 $('.tool').click(function() {
@@ -26,28 +30,18 @@ $('.tool').click(function() {
 });
 
 $('.preview').mousedown(function(e) {
-    if(editor.selectedTool !== Editor.PointerTool) {
+    if(editor.selectedTool !== Editor.PointerTool)
         editor.startNewTag(e.clientX, e.clientY);
-        updatePreview();
-    }
     return false;
 });
 $('.preview, .overlayPreview').mousemove(function(e) {
-    editor.updateNewTag(e.clientX, e.clientY);
-    // TODO: remove this once callbacks are in place
     if(editor.newTagPreview !== null)
-        updatePreview();
+        editor.updateNewTag(e.clientX, e.clientY);
     return false;
 });
 $('.preview, .overlayPreview').mouseup(function(e) {
-    // TODO: editor.endNewTag();
-    // TODO: remove this once callbacks are in place
-    if(editor.newTagPreview === null)
-        return false;
-    var tag = editor.endNewTag();
-    updatePreview();
-    // TODO: create tag element and begin editing it
-    alert('TODO: Create ' + tag.type + ' tag');
+    if(editor.newTagPreview !== null)
+        editor.endNewTag();
     return false;
 });
 
@@ -59,5 +53,7 @@ function initTags() {
     });
 }
 var editor = new Editor();
+editor.newTagPreviewUpdated = updatePreview;
+editor.newTagCreated = newTagCreated;
 updateTools();
 $(initTags);

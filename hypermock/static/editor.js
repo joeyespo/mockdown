@@ -7,7 +7,8 @@ function Editor() {
     this.selectedTool = Editor.PointerTool;
     this.selectedTag = null;
     this.newTagPreview = null;
-    // TODO: callbacks
+    this.newTagPreviewUpdated = null;
+    this.newTagCreated = null;
 }
 Editor.PointerTool = new Tool('pointer', null);
 Editor.CommentTool = new Tool('comment', CommentTag);
@@ -38,24 +39,35 @@ Editor.prototype.selectTool = function(tool) {
 };
 Editor.prototype.startNewTag = function(x, y) {
     this.newTagPreview = new NewTagPreview(x, y);
+    if(this.newTagPreviewUpdated)
+        this.newTagPreviewUpdated();
 };
 Editor.prototype.updateNewTag = function(x, y) {
-    if(this.newTagPreview !== null) {
-        this.newTagPreview.width = Math.max(x - this.newTagPreview.x, 0);
-        this.newTagPreview.height = Math.max(y - this.newTagPreview.y, 0);
-    }
+    if(this.newTagPreview === null)
+        return;
+    this.newTagPreview.width = Math.max(x - this.newTagPreview.x, 0);
+    this.newTagPreview.height = Math.max(y - this.newTagPreview.y, 0);
+    if(this.newTagPreviewUpdated)
+        this.newTagPreviewUpdated();
 };
 Editor.prototype.endNewTag = function() {
+    if(this.newTagPreview === null)
+        return null;
     var bounds = this.newTagPreview;
     this.newTagPreview = null;
-    return bounds !== null && bounds.width > 0 && bounds.height > 0 ?
-        this.newTag(bounds) :
-        null;
+    if(this.newTagPreviewUpdated)
+        this.newTagPreviewUpdated();
+    if(bounds.width > 0 && bounds.height > 0)
+        return this.newTag(bounds);
+    return null;
 };
 Editor.prototype.newTag = function(bounds) {
-    return this.selectedTool !== Editor.PointerTool ?
-        this.tags.create(this.selectedTool.name, bounds)
-        : null;
+    if(this.selectedTool === Editor.PointerTool)
+        return null;
+    var tag = this.tags.create(this.selectedTool.name, bounds);
+    if(this.newTagCreated)
+        this.newTagCreated(tag);
+    return tag;
 };
 
 
