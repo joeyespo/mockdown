@@ -61,10 +61,10 @@ Editor.prototype.endNewTag = function() {
         return this.createTag(bounds);
     return null;
 };
-Editor.prototype.createTag = function(bounds) {
+Editor.prototype.createTag = function(bounds, data) {
     if(this.selectedTool === Editor.PointerTool)
         return null;
-    var tag = this.tags.create(this.selectedTool.name, bounds);
+    var tag = this.tags.create(this.selectedTool.name, bounds, data);
     if(this.tagCreated)
         this.tagCreated(tag);
     return tag;
