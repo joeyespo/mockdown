@@ -17,8 +17,18 @@ function updatePreview() {
         {display: 'none'});
 }
 
+function tagCreated(tag) {
+    // TODO: begin editing the new tag if created by user
+}
+
 function tagAdded(tag) {
+    // TODO: create DOM element
     alert('TODO: Create ' + tag.type + ' tag element');
+}
+
+function tagRemoved(tag) {
+    // TODO: remove associated DOM element
+    alert('TODO: Remove ' + tag.type + ' tag element');
 }
 
 
@@ -53,7 +63,9 @@ function initTags() {
     });
 }
 var editor = new Editor();
+editor.tagCreated = tagCreated;
 editor.tagAdded = tagAdded;
+editor.tagRemoved = tagRemoved;
 editor.newTagPreviewUpdated = updatePreview;
 updateTools();
 $(initTags);
