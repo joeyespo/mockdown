@@ -17,7 +17,7 @@ function updatePreview() {
         {display: 'none'});
 }
 
-function tagCreated(tag) {
+function tagAdded(tag) {
     alert('TODO: Create ' + tag.type + ' tag element');
 }
 
@@ -49,11 +49,11 @@ $('.preview, .overlayPreview').mouseup(function(e) {
 // Initialization
 function initTags() {
     $.each(window.sessionTags || [], function(index, tag) {
-        editor.tags.create(tag.type, tag.bounds);
+        editor.addTag(tag);
     });
 }
 var editor = new Editor();
 editor.newTagPreviewUpdated = updatePreview;
-editor.tagCreated = tagCreated;
+editor.tagAdded = tagAdded;
 updateTools();
 $(initTags);
