@@ -17,8 +17,8 @@ function updatePreview() {
         {display: 'none'});
 }
 
-function newTagCreated(tag) {
-    alert('TODO: Create ' + tag.type + ' tag');
+function tagCreated(tag) {
+    alert('TODO: Create ' + tag.type + ' tag element');
 }
 
 
@@ -54,6 +54,6 @@ function initTags() {
 }
 var editor = new Editor();
 editor.newTagPreviewUpdated = updatePreview;
-editor.newTagCreated = newTagCreated;
+editor.tagCreated = tagCreated;
 updateTools();
 $(initTags);

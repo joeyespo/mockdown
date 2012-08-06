@@ -8,7 +8,7 @@ function Editor() {
     this.selectedTag = null;
     this.newTagPreview = null;
     this.newTagPreviewUpdated = null;
-    this.newTagCreated = null;
+    this.tagCreated = null;
 }
 Editor.PointerTool = new Tool('pointer', null);
 Editor.CommentTool = new Tool('comment', CommentTag);
@@ -58,15 +58,15 @@ Editor.prototype.endNewTag = function() {
     if(this.newTagPreviewUpdated)
         this.newTagPreviewUpdated();
     if(bounds.width > 0 && bounds.height > 0)
-        return this.newTag(bounds);
+        return this.createTag(bounds);
     return null;
 };
-Editor.prototype.newTag = function(bounds) {
+Editor.prototype.createTag = function(bounds) {
     if(this.selectedTool === Editor.PointerTool)
         return null;
     var tag = this.tags.create(this.selectedTool.name, bounds);
-    if(this.newTagCreated)
-        this.newTagCreated(tag);
+    if(this.tagCreated)
+        this.tagCreated(tag);
     return tag;
 };
 
