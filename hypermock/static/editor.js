@@ -17,15 +17,11 @@ Editor.CommentTool = new Tool('comment', CommentTag);
 Editor.HyperlinkTool = new Tool('hyperlink', HyperlinkTag);
 Editor.Tools = [Editor.PointerTool, Editor.CommentTool, Editor.HyperlinkTool];
 Editor.Tools.find = function(name) {
-    var tool = null;
-    $.each(this, function(index, item) {
-        if(item.name === name) {
-            tool = item;
-            return false;
-        }
-        return true;
-    });
-    return tool;
+    for(var index = 0; index < this.length; index++) {
+        if(this[index].name == name)
+            return this[index];
+    }
+    return null;
 };
 Editor.prototype.selectTool = function(tool) {
     if(typeof(tool) == 'string') {
