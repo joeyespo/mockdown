@@ -12,7 +12,7 @@ function updateTools() {
 
 function updatePreview() {
     var bounds = editor.newTagPreview;
-    $('.overlayPreview').css(bounds !== null ?
+    $('.tagPreview').css(bounds !== null ?
         {display: 'block', left: bounds.x, top: bounds.y, width: bounds.width, height: bounds.height} :
         {display: 'none'});
 }
@@ -45,12 +45,12 @@ $('.mockup').mousedown(function(e) {
         editor.startNewTag(e.clientX, e.clientY);
     return false;
 });
-$('.mockup, .overlayPreview').mousemove(function(e) {
+$('.mockup, .tagPreview').mousemove(function(e) {
     if(editor.newTagPreview !== null)
         editor.updateNewTag(e.clientX, e.clientY);
     return false;
 });
-$('.mockup, .overlayPreview').mouseup(function(e) {
+$('.mockup, .tagPreview').mouseup(function(e) {
     if(editor.newTagPreview !== null)
         editor.endNewTag();
     return false;

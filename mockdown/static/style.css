@@ -222,7 +222,7 @@ a:hover {
   display: none;
 }
 
-.overlayPreview {
+.tagPreview {
   position: absolute;
   border: 2px dotted #266;
   background-color: rgba(50, 200, 50, 0.2);
