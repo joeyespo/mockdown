@@ -56,24 +56,24 @@ Editor.prototype.endNewTag = function() {
     if(this.newTagPreviewUpdated)
         this.newTagPreviewUpdated();
     if(bounds.width > 0 && bounds.height > 0)
-        return this.createTag(bounds);
+        return this.createTag(bounds, true);
     return null;
 };
-Editor.prototype.createTag = function(bounds, data) {
+Editor.prototype.createTag = function(bounds, byUser) {
     if(this.selectedTool === Editor.PointerTool)
         return null;
-    var tag = Tag.Create(this.selectedTool.name, bounds, data);
+    var tag = Tag.Create(this.selectedTool.name, bounds);
     if(this.tagCreated)
-        this.tagCreated(tag);
-    this.addTag(tag);
+        this.tagCreated(tag, byUser);
+    this.addTag(tag, byUser);
     return tag;
 };
-Editor.prototype.addTag = function(tag) {
+Editor.prototype.addTag = function(tag, byUser) {
     if(!tag)
         throw new Error('Invalid tag.');
     this.tags.push(tag);
     if(this.tagAdded)
-        this.tagAdded(tag);
+        this.tagAdded(tag, byUser);
 };
 Editor.prototype.remove = function(tag) {
     if(!tag)
