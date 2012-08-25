@@ -18,8 +18,9 @@ function updatePreview() {
 }
 
 function tagAdded(tag, byUser) {
-    $('.template.tag').clone().appendTo('.tags').removeClass('template')
+    var element = $('.template.tag').clone().appendTo('.tags').removeClass('template')
         .css({left: tag.bounds.x, top: tag.bounds.y, width: tag.bounds.width, height: tag.bounds.height});
+    handleEvents(element);
     // TODO: begin editing the new tag if created by user
     if(byUser)
         alert('TODO: Begin editing tag');
@@ -28,6 +29,22 @@ function tagAdded(tag, byUser) {
 function tagRemoved(tag) {
     // TODO: remove associated DOM element
     alert('TODO: Remove ' + tag.type + ' tag element');
+}
+
+
+// Event functions
+function handleEvents(element) {
+    function ignore() {
+        return false;
+    }
+    function forward(e) {
+        $('.mockup').trigger(e);
+        return true;
+    }
+    // Enable drag-and-drop over non-mockup elements
+    $(element).mousedown(ignore);
+    $(element).mousemove(forward);
+    $(element).mouseup(forward);
 }
 
 
@@ -45,12 +62,12 @@ $('.mockup').mousedown(function(e) {
         editor.startNewTag(e.pageX - this.offsetLeft, e.pageY - this.offsetTop);
     return false;
 });
-$('.mockup, .tagPreview').mousemove(function(e) {
+$('.mockup').mousemove(function(e) {
     if(editor.newTagPreview !== null)
         editor.updateNewTag(e.pageX - this.offsetLeft, e.pageY - this.offsetTop);
     return false;
 });
-$('.mockup, .tagPreview').mouseup(function(e) {
+$('.mockup').mouseup(function(e) {
     if(editor.newTagPreview !== null)
         editor.endNewTag();
     return false;
@@ -67,5 +84,6 @@ var editor = new Editor();
 editor.tagAdded = tagAdded;
 editor.tagRemoved = tagRemoved;
 editor.newTagPreviewUpdated = updatePreview;
+handleEvents('.tagPreview');
 updateTools();
 $(initTags);

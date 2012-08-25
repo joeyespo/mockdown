@@ -214,8 +214,13 @@ a:hover {
   margin-left: -200px; /* -<RightColumnWidth> */
 }
 
-.popups .popup {
+.popups {
+  position: relative;
+}
+
+.popup {
   display: none;
+  position: absolute;
 }
 
 .templates .template {
@@ -223,7 +228,6 @@ a:hover {
 }
 
 .tagPreview {
-  position: absolute;
   border: 2px dotted #266;
   background-color: rgba(50, 200, 50, 0.2);
   cursor: crosshair;
@@ -254,4 +258,8 @@ a:hover {
   box-shadow: 0 0 2px 2px #8f8;
   -moz-box-shadow: 0 0 2px 2px #8e8;
   -webkit-box-shadow: 0 0 2px 2px #8e8;
+}
+
+.tag.isDragging {
+  cursor: crosshair;
 }
