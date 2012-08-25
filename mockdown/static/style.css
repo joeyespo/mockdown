@@ -210,7 +210,7 @@ a:hover {
   background-color: #fff;
 }
 
-.subtools {
+.properties {
   float: left;
   width: 200px; /* <RightColumnWidth> */
   margin-left: -200px; /* -<RightColumnWidth> */
