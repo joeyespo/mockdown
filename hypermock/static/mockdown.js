@@ -1,4 +1,4 @@
-// hypermock.js
+// Mockdown.js
 
 // TODO: better drag-to-create functionality
 

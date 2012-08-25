@@ -30,4 +30,4 @@ def main():
         app.config['PORT'] = port
     
     # Run the server, using the specified workspace path
-    app.run(app.config['HOST'], app.config['PORT'], debug=True, use_reloader=app.config['DEBUG_HYPERMOCK'])
+    app.run(app.config['HOST'], app.config['PORT'], debug=True, use_reloader=app.config['DEBUG_MOCKDOWN'])

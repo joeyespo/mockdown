@@ -1,7 +1,7 @@
 """\
 Server
 
-Hypermock server to create mockup relationships and add comments.
+Mockdown server to create mockup relationships and add comments.
 """
 
 import os

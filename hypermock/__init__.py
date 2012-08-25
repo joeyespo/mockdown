@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """\
-Hypermock
+Mockdown
 
 Organize your mockups for implementation or for demo.
 """
