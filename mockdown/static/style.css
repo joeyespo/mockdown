@@ -164,12 +164,12 @@ a:hover {
   width: 100%;
 }
 
-.previewPane {
+.preview {
   margin: 0 200px 0 230px; /* "0 <RightColumnWidth> 0 <LeftColumnWidth> */
   text-align: center;
 }
 
-.preview.toolSelected {
+.mockup.toolSelected {
   cursor: crosshair;
 }
 

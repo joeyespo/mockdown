@@ -7,7 +7,7 @@
 function updateTools() {
     $('.tool').removeClass('selected');
     $('.tool[data-tool="' + editor.selectedTool.name + '"]').addClass('selected');
-    $('.preview').toggleClass('toolSelected', editor.selectedTool !== Editor.PointerTool);
+    $('.mockup').toggleClass('toolSelected', editor.selectedTool !== Editor.PointerTool);
 }
 
 function updatePreview() {
@@ -38,17 +38,17 @@ $('.tool').click(function() {
     return false;
 });
 
-$('.preview').mousedown(function(e) {
+$('.mockup').mousedown(function(e) {
     if(editor.selectedTool !== Editor.PointerTool)
         editor.startNewTag(e.clientX, e.clientY);
     return false;
 });
-$('.preview, .overlayPreview').mousemove(function(e) {
+$('.mockup, .overlayPreview').mousemove(function(e) {
     if(editor.newTagPreview !== null)
         editor.updateNewTag(e.clientX, e.clientY);
     return false;
 });
-$('.preview, .overlayPreview').mouseup(function(e) {
+$('.mockup, .overlayPreview').mouseup(function(e) {
     if(editor.newTagPreview !== null)
         editor.endNewTag();
     return false;
