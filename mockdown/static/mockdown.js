@@ -39,6 +39,8 @@ $('.tool').click(function() {
 });
 
 $('.mockup').mousedown(function(e) {
+    if(e.which != 1)
+        return true;
     if(editor.selectedTool !== Editor.PointerTool)
         editor.startNewTag(e.clientX, e.clientY);
     return false;
