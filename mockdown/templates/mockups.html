@@ -16,30 +16,26 @@
 {% block page %}
     <div class="mockupEdit">
         <div class="previewContainer">
-            <div class="previewPane">
+            <div class="preview">
                 <img class="preview" src="{{ mockup.image }}" alt="Mockup image" />
             </div>
         </div>
 
         <div class="project">
-            <div class="pane">
-                <div class="navigation">
-                    <h2>Project</h2>
-                    <a class="button" href="{{ url_for('.index') }}">Back</a>
-                </div>
-                <div class="tools">
-                    <h2>Tools</h2>
-                    <a class="button tool selected" data-tool="pointer" href="#">Pointer</a>
-                    <a class="button tool" data-tool="hyperlink" href="#">Hyperlink</a>
-                    <a class="button tool" data-tool="comment" href="#">Comment</a>
-                    <!-- TODO: More tools -->
-                </div>
+            <div class="navigation">
+                <h2>Project</h2>
+                <a class="button" href="{{ url_for('.index') }}">Back</a>
+            </div>
+            <div class="tools">
+                <h2>Tools</h2>
+                <a class="button tool selected" data-tool="pointer" href="#">Pointer</a>
+                <a class="button tool" data-tool="hyperlink" href="#">Hyperlink</a>
+                <a class="button tool" data-tool="comment" href="#">Comment</a>
+                <!-- TODO: More tools -->
             </div>
         </div>
 
         <div class="properties">
-            <div class="pane">
-            </div>
         </div>
 
         <div class="overlays">
