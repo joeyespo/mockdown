@@ -18,8 +18,8 @@ function updatePreview() {
 }
 
 function tagAdded(tag, byUser) {
-    // TODO: create DOM element
-    alert('TODO: Create ' + tag.type + ' tag element');
+    $('.template.tag').clone().appendTo('.tags').removeClass('template')
+        .css({left: tag.bounds.x, top: tag.bounds.y, width: tag.bounds.width, height: tag.bounds.height});
     // TODO: begin editing the new tag if created by user
     if(byUser)
         alert('TODO: Begin editing tag');

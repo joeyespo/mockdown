@@ -218,6 +218,10 @@ a:hover {
   display: none;
 }
 
+.templates .template {
+  display: none;
+}
+
 .overlayPreview {
   position: absolute;
   border: 2px dotted #266;
@@ -227,4 +231,22 @@ a:hover {
   height: 0;
   left: 0;
   top: 0;
+}
+.tags {
+  position: absolute;
+}
+
+.tag {
+  position: absolute;
+  border: 1px dotted #266;
+  background-color: rgba(50, 200, 50, 0.1);
+  width: 0;
+  height: 0;
+  left: 0;
+  top: 0;
+}
+.tag:hover {
+  box-shadow: 0 0 2px 2px #8f8;
+  -moz-box-shadow: 0 0 2px 2px #8e8;
+  -webkit-box-shadow: 0 0 2px 2px #8e8;
 }
