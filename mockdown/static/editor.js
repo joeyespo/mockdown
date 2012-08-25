@@ -38,7 +38,7 @@ Editor.prototype.selectTool = function(tool) {
 Editor.prototype.startNewTag = function(x, y) {
     this.newTagPreview = new NewTagPreview(x, y);
     if(this.newTagPreviewUpdated)
-        this.newTagPreviewUpdated();
+        this.newTagPreviewUpdated(true);
 };
 Editor.prototype.updateNewTag = function(x, y) {
     if(this.newTagPreview === null)
@@ -46,7 +46,7 @@ Editor.prototype.updateNewTag = function(x, y) {
     this.newTagPreview.width = Math.max(x - this.newTagPreview.x, 0);
     this.newTagPreview.height = Math.max(y - this.newTagPreview.y, 0);
     if(this.newTagPreviewUpdated)
-        this.newTagPreviewUpdated();
+        this.newTagPreviewUpdated(true);
 };
 Editor.prototype.endNewTag = function() {
     if(this.newTagPreview === null)
@@ -54,7 +54,7 @@ Editor.prototype.endNewTag = function() {
     var bounds = this.newTagPreview;
     this.newTagPreview = null;
     if(this.newTagPreviewUpdated)
-        this.newTagPreviewUpdated();
+        this.newTagPreviewUpdated(false);
     if(bounds.width > 0 && bounds.height > 0)
         return this.createTag(bounds, true);
     return null;

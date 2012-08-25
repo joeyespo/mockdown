@@ -10,11 +10,13 @@ function updateTools() {
     $('.mockup').toggleClass('toolSelected', editor.selectedTool !== Editor.PointerTool);
 }
 
-function updatePreview() {
+function updatePreview(isDragging) {
     var bounds = editor.newTagPreview;
     $('.tagPreview').css(bounds !== null ?
         {display: 'block', left: bounds.x, top: bounds.y, width: bounds.width, height: bounds.height} :
         {display: 'none'});
+    // Show drag cursor when dragging over tags
+    $('.tag').toggleClass('isDragging', isDragging);
 }
 
 function tagAdded(tag, byUser) {
