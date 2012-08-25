@@ -42,12 +42,12 @@ $('.mockup').mousedown(function(e) {
     if(e.which != 1)
         return true;
     if(editor.selectedTool !== Editor.PointerTool)
-        editor.startNewTag(e.clientX, e.clientY);
+        editor.startNewTag(e.pageX - this.offsetLeft, e.pageY - this.offsetTop);
     return false;
 });
 $('.mockup, .tagPreview').mousemove(function(e) {
     if(editor.newTagPreview !== null)
-        editor.updateNewTag(e.clientX, e.clientY);
+        editor.updateNewTag(e.pageX - this.offsetLeft, e.pageY - this.offsetTop);
     return false;
 });
 $('.mockup, .tagPreview').mouseup(function(e) {
