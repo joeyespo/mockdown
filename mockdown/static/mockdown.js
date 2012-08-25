@@ -1,4 +1,4 @@
-// Mockdown.js
+// mockdown.js
 
 // TODO: better drag-to-create functionality
 
