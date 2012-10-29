@@ -22,7 +22,7 @@ function updatePreview(isDragging) {
 function tagAdded(tag, byUser) {
     var element = $('.template.tag').clone().appendTo('.tags').removeClass('template')
         .css({left: tag.bounds.x, top: tag.bounds.y, width: tag.bounds.width, height: tag.bounds.height});
-    handleEvents(element);
+    bindTagEvents(element);
     // TODO: begin editing the new tag if created by user
     if(byUser)
         alert('TODO: Begin editing tag');
@@ -35,18 +35,20 @@ function tagRemoved(tag) {
 
 
 // Event functions
-function handleEvents(element) {
-    function ignore() {
-        return false;
-    }
-    function forward(e) {
+
+// Binds events to allow other elements to drag-and-drop over it
+function bindTagEvents(element) {
+    function bubbleUp(e) {
         $('.mockup').trigger(e);
         return true;
     }
-    // Enable drag-and-drop over non-mockup elements
-    $(element).mousedown(ignore);
-    $(element).mousemove(forward);
-    $(element).mouseup(forward);
+
+    // Ignore any clicks on the element
+    $(element).mousedown(function() { return false; });
+
+    // Bubble up the other mouse events to allow drag-and-drop
+    $(element).mousemove(bubbleUp);
+    $(element).mouseup(bubbleUp);
 }
 
 
@@ -86,6 +88,6 @@ var editor = new Editor();
 editor.tagAdded = tagAdded;
 editor.tagRemoved = tagRemoved;
 editor.newTagPreviewUpdated = updatePreview;
-handleEvents('.tagPreview');
+bindTagEvents('.tagPreview');
 updateTools();
 $(initTags);
